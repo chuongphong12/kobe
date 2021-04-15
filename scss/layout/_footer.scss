@@ -1,0 +1,104 @@
+/*****************************
+11 - Layout - Footer
+*****************************/
+
+.footer{
+	background-color: #111111;
+	&-widget{
+		.widget-title{
+			@extend %body-color;
+			@extend %fontSize18;
+			@extend %fontWeight500;
+			@extend %textTupper;
+			@extend %lineheight1;
+			@include breakpoint(large){
+				font-size: 15px;
+			}
+		}
+		.footer-menu{
+			@extend %fontSize14;
+			li{
+				@extend %lineheight1;
+				&:not(:last-child){
+					margin-bottom: 25px;
+				}
+				a{
+					@extend %fontSize14;
+				}
+			}
+		}
+		.taglist{
+			@extend %textAcenter;
+			span{
+				@extend %fontWeight700;
+				@extend %fontSize14;
+				@extend %body-color;
+			}
+			a{
+				@extend %posrelative;
+				@extend %fontSize14;
+				@extend %body-color;
+				@extend %fontWeight300;
+				font-style: italic;
+				padding-left: 2px;
+				&:not(:last-child){
+					padding-right: 8px;
+					&:after{
+						@extend %posabsolute;
+						content: '|';
+						@extend %right-0;
+						@extend %top-0;
+						@extend %body-color;
+						@extend %lineheight1;
+						@extend %fontSize16;
+					}
+				}
+			}
+		}
+		.social {
+			margin-bottom: 20px;
+			&__link {
+				margin-right: 10px;
+			}
+		}
+	}
+	&-bottom {
+		background-color: $color-black;
+	}
+	.contact {
+		&-icon {
+      display: flex;
+      flex: 1;
+      max-width: 70px;
+      justify-content: flex-start;
+      align-items: center;
+      img{
+        width: 36px;
+        height: fit-content;
+      }
+    }
+    &-info {
+      display: flex;
+      flex: 3;
+      max-width: 150px;
+      flex-direction: column;
+      font-size: 14px;
+      color: $body-font;
+      &__title {
+        font-weight: normal;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      a {
+        color: #bdbdbd;
+      }
+      a:hover {
+        color: $primary-color;
+      }
+    }
+	}
+}
+.copyright-text{
+	margin-bottom: 0;
+	font-size: 12px;
+}
